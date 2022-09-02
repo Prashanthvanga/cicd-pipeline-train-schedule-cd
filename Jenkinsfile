@@ -16,6 +16,7 @@ pipeline {
                 branch 'master'
             }
             steps {
+                  echo 'DeployToStaging'
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
                     sshPublisher(
                         failOnError: true,
